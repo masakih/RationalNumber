@@ -35,6 +35,9 @@
 		F4A6039C23D43F7E00E73A91 /* RationalNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RationalNumber.swift; sourceTree = "<group>"; };
 		F4A6039E23D43FCE00E73A91 /* RationalNumberParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RationalNumberParser.swift; sourceTree = "<group>"; };
 		F4A603A023D4400D00E73A91 /* RationalNumberParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RationalNumberParserTests.swift; sourceTree = "<group>"; };
+		F4F1ACE02416806C00BDE525 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		F4F1ACE22416807A00BDE525 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		F4F1ACE52416819200BDE525 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +62,9 @@
 		F4A6037823D43F6700E73A91 = {
 			isa = PBXGroup;
 			children = (
-				F4A6038423D43F6700E73A91 /* RationalNumber */,
-				F4A6038F23D43F6700E73A91 /* RationalNumberTests */,
+				F4F1ACE52416819200BDE525 /* Package.swift */,
+				F4A6038423D43F6700E73A91 /* Sources */,
+				F4A6038F23D43F6700E73A91 /* Tests */,
 				F4A6038323D43F6700E73A91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4A6038423D43F6700E73A91 /* RationalNumber */ = {
+		F4A6038423D43F6700E73A91 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				F4A6038523D43F6700E73A91 /* RationalNumber.h */,
@@ -82,15 +86,25 @@
 				F4A6039E23D43FCE00E73A91 /* RationalNumberParser.swift */,
 				F4A6038623D43F6700E73A91 /* Info.plist */,
 			);
-			path = RationalNumber;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		F4A6038F23D43F6700E73A91 /* RationalNumberTests */ = {
+		F4A6038F23D43F6700E73A91 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F4A6039023D43F6700E73A91 /* RationalNumberTests.swift */,
-				F4A603A023D4400D00E73A91 /* RationalNumberParserTests.swift */,
+				F4F1ACE22416807A00BDE525 /* LinuxMain.swift */,
+				F4F1ACDF2416804900BDE525 /* RationalNumberTests */,
 				F4A6039223D43F6700E73A91 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		F4F1ACDF2416804900BDE525 /* RationalNumberTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4A603A023D4400D00E73A91 /* RationalNumberParserTests.swift */,
+				F4A6039023D43F6700E73A91 /* RationalNumberTests.swift */,
+				F4F1ACE02416806C00BDE525 /* XCTestManifests.swift */,
 			);
 			path = RationalNumberTests;
 			sourceTree = "<group>";
@@ -359,7 +373,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RationalNumber/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,7 +398,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = RationalNumber/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,7 +418,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RationalNumberTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -422,7 +436,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RationalNumberTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

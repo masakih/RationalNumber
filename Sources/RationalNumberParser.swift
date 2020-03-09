@@ -6,6 +6,7 @@
 //  Copyright © 2020 Hori,Masaki. All rights reserved.
 //
 
+import Foundation
 
 struct RationalNumberParser {
     
