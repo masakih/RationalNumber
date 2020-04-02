@@ -100,9 +100,7 @@ extension RationalNumber: Comparable {
 }
 
 extension RationalNumber: SignedNumeric {
-    
-    public typealias IntegerLiteralType = Int
-        
+            
     public init?<T>(exactly source: T) where T : BinaryInteger {
         
         guard let i = Int(exactly: source) else { return nil }
