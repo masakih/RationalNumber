@@ -36,7 +36,7 @@ public struct RationalNumber {
     
     public init(integer value: Int) {
         
-        self = RationalNumber(numerator: value, denominator: 1)
+        self.init(numerator: value, denominator: 1)
     }
     
     public var double: Double {
@@ -74,7 +74,7 @@ extension RationalNumber: AdditiveArithmetic {
     
     var inverse: RationalNumber {
         
-        .init(numerator: numerator * -1, denominator: denominator)
+        .init(numerator: -numerator, denominator: denominator)
     }
     
     func appended(_ other: RationalNumber) -> RationalNumber {
@@ -84,18 +84,16 @@ extension RationalNumber: AdditiveArithmetic {
         let l_numerator = self.numerator * other.denominator
         let r_numerator = other.numerator * self.denominator
         
-        return RationalNumber(numerator: l_numerator + r_numerator,
-                              denominator: self.denominator * other.denominator)
+        return .init(numerator: l_numerator + r_numerator,
+                     denominator: self.denominator * other.denominator)
     }
 }
 
 extension RationalNumber: Comparable {
     
     public static func < (lhs: RationalNumber, rhs: RationalNumber) -> Bool {
-        
-        let d = lhs - rhs
-        
-        return d.numerator < 0
+                
+        (lhs - rhs).numerator < 0
     }
 }
 
@@ -124,7 +122,7 @@ extension RationalNumber: SignedNumeric {
         let sr1 = rhs.numerator / s2
         let sr2 = rhs.denominator / s1
         
-        return RationalNumber(numerator: sl1 * sr1, denominator: sl2 * sr2)
+        return .init(numerator: sl1 * sr1, denominator: sl2 * sr2)
     }
     
     public static func *= (lhs: inout RationalNumber, rhs: RationalNumber) {

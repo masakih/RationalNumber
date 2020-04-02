@@ -42,6 +42,6 @@ extension RationalNumber: ExpressibleByStringLiteral {
     
     public init(stringLiteral value: String) {
         
-        self = RationalNumberParser().parse(value)
+        self.init(string: value)
     }
 }
