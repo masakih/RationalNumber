@@ -16,15 +16,22 @@ class RationalNumberParserTests: XCTestCase {
 
     func testParse() {
         
-        XCTAssertEqual(parser.parse("1/16"), RationalNumber(numerator: 1, denominator: 16))
+        XCTAssertEqual(try? parser.parse("1/16"), RationalNumber(numerator: 1, denominator: 16))
         
-        XCTAssertEqual(parser.parse(" 1"), RationalNumber(numerator: 1, denominator: 1))
+        XCTAssertEqual(try? parser.parse(" 1"), RationalNumber(numerator: 1, denominator: 1))
         
-        XCTAssertEqual(parser.parse("1+1/4"), RationalNumber(numerator: 5, denominator: 4))
+        XCTAssertEqual(try? parser.parse("1+1/4"), RationalNumber(numerator: 5, denominator: 4))
         
-        XCTAssertEqual(parser.parse("1 +1/4"), RationalNumber(numerator: 5, denominator: 4))
+        XCTAssertEqual(try? parser.parse("1 +1/4"), RationalNumber(numerator: 5, denominator: 4))
         
-        XCTAssertEqual(parser.parse("1 +1/4+2/4"), RationalNumber(numerator: 7, denominator: 4))
+        XCTAssertEqual(try? parser.parse("1 +1/4+2/4"), RationalNumber(numerator: 7, denominator: 4))
+        
+        XCTAssertThrowsError(try parser.parse("/"))
+        XCTAssertThrowsError(try parser.parse("1/"))
+        XCTAssertThrowsError(try parser.parse("/1"))
+        
+        
+        XCTAssertEqual(try parser.parse("2 / 2 / 5"), RationalNumber(numerator: 1, denominator: 5))
     }
     
     func testExpressibleByStringLiteral() {
