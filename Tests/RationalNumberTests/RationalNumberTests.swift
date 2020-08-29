@@ -95,6 +95,11 @@ class RationalNumberTests: XCTestCase {
         c *= b
         XCTAssertEqual(c, RationalNumber(numerator: 5, denominator: 18))
         
+        
+        // test multiple by 0
+        XCTAssertEqual(0, 1 * RationalNumber(integer: 0))
+        XCTAssertEqual(0, RationalNumber(integer: 0) * 1)
+        
         // Over flow test
         let g = RationalNumber(integer: Int.max - 7)  // = 9223372036854775800
         let h = RationalNumber(numerator: 3, denominator: 100)

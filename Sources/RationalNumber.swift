@@ -114,6 +114,12 @@ extension RationalNumber: SignedNumeric {
     
     public static func * (lhs: RationalNumber, rhs: RationalNumber) -> RationalNumber {
         
+        if lhs == .zero { return .zero }
+        if rhs == .zero { return .zero }
+        
+        if lhs == 1 { return rhs }
+        if rhs == 1 { return lhs }
+        
         let s1 = gcd(lhs.numerator, rhs.denominator)
         let s2 = gcd(lhs.denominator, rhs.numerator)
         
